@@ -2,6 +2,9 @@ import bebidasRepository from "../repository/bebidasRepository.js";
 
 export default{
     async cadastrarBebida(data){
+        if (!data.nome || !data.marca || !data.teor_alcoolico) {
+            throw new Error('Todos os campos são obrigatório');
+        }
         return await bebidasRepository.create(data)
     },
     async buscarBebida(data){
