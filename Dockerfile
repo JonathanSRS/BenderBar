@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Comando padrão ao iniciar o container
-CMD [npx prisma migrate deploy && npm start]
+CMD ["npm", "run", "start:prod"]
