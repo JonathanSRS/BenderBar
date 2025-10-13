@@ -14,6 +14,7 @@
 4. Crie o arquivo .env e adicione a variável DATABASE_URL
 touch .env
 5. Migrantion
+```rm -rf prisma/migrations```
 ```npx prisma generate```
 ```npx prisma migrate dev --name init```
 
@@ -24,6 +25,11 @@ curl -X POST http://localhost:3000/bebidas -H "Content-Type: application/json" -
 ```
 **GET**
 ``` curl http://localhost:3000/bebidas/whisky ```
+
+**Produção**
+```
+curl -X POST https://benderbar.onrender.com/bebidas -H "Content-Type: application/json" -H "x-api-key: " -d "{\"nome\": \"Whisky Jack Daniels Honey\", \"marca\": \"Jack Daniels\", \"teor_alcoolico\": 0.35}"
+```
 
 Caso não utilizar o banco relacional mysql atualizar o provider em 
 cd prisma/
