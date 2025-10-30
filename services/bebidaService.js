@@ -11,6 +11,10 @@ export default{
         return await bebidasRepository.find(data)
     },
 
+    async buscarBebidas(){
+        return await bebidasRepository.find()
+    },
+
     async deletarPorId(data){
         return await bebidasRepository.delete(data)
     },

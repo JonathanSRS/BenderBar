@@ -21,6 +21,15 @@ router.get("/:nome", async (req, res)=>{
     }
 });
 
+router.get("/", async (req, res)=>{
+    try {
+        const bebida = await bebidaService.buscarBebidas();
+        res.json(bebida);
+    } catch (err) {
+        res.status(404).json({ error: err.message });
+    }
+});
+
 router.get("/sobre/:nome", async (req, res)=>{
     try {
         const bebida = await bebidaService.buscarBebida(req.params.nome);

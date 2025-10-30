@@ -13,6 +13,13 @@ export default{
             }
         })
     },
+    async find(){
+        return prisma.findMany({
+            orderBy:[
+                {nome: 'desc'}
+            ]
+        })
+    },
     async delete(id){
         return prisma.delete({
             where: {
